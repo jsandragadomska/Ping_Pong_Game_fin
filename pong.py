@@ -37,22 +37,26 @@ ball.goto(0, 0)
 # Move paddles function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 20
+    if y < 240:
+        y += 20
     paddle_a.sety(y)
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20
+    if y < 240:
+        y += 20
     paddle_b.sety(y)
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20
+    if y > -230:
+        y -= 20
     paddle_a.sety(y)
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20
+    if y > -230:
+        y -= 20
     paddle_b.sety(y)
 
 # Keybord binding
