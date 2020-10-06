@@ -33,6 +33,9 @@ ball.shape("circle")
 ball.color("black")
 ball.penup()
 ball.goto(0, 0)
+# every time while ball moves it moves by 2 pixels
+ball.dx = 2
+ball.dy = 2
 
 # Move paddles function
 def paddle_a_up():
@@ -69,3 +72,28 @@ window.onkeypress(paddle_b_down, "l")
 # Main game loop
 while True:
     window.update()
+
+    # Move the ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Border checking
+    # top
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+
+    # bottom
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+
+    # right
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    # left
+    if ball.xcor() <  -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
