@@ -2,7 +2,7 @@
 - Python 3
 - Turtle
 
-## Run Pung game
+## Run Pong game
 ```Python pong.py```
 
 - left paddle :
